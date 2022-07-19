@@ -1,0 +1,22 @@
+Recursion in depth:
+Recursion: Whenever any function is calling itself directly or indirectly.
+Iterative: Using the concept of loops
+def factorial(n):
+	----	
+	---
+	n * factorial(n-1)
+Application of recursion:
+Divide and Conquer
+Tree Based Data Structure
+Dynamic Programming
+Pre-requisite
+Recurrence Relation: Master's Theorem, Recursive Tree approach, Substitution Method
+Base case condition
+Recursive tree
+Stack(LIFO) data structure -> to store the function call
+
+5! = 5 * 4 * 3 * 2 * 1 = 120
+i = 1, 2, 3, 4, 5
+5! = 1*2*3*4*5 = 120
+
+
