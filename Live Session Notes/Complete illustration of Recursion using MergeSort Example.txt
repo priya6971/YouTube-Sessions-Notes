@@ -1,0 +1,34 @@
+Complete illustration of Recursion using MergeSort Example
+50	20	40	90	88	11	13
+0	1	2	3	4	5	6
+
+Divide and Conquer
+Recursive Tree			    c1(11,13,20,40,50,88,90)
+					arr, 0, 6
+mid = 0 + (6-0)/2 = 3
+			 c2(20,40,50,90)				c9(11,13,88)
+			arr, 0, 3					arr, 4, 6
+mid = 0 + (3-0)/2 = 1					mid = 4 + (6-4)/2 = 5
+	c3 (20, 50)			c6(40, 90)	c10(11,88)  	c13(13)
+	arr, 0,1				arr,2,3		arr, 4, 5		arr, 6, 6(13)
+mid = 0+(1-0)/2 = 0		mid = 2 + (3-2)/2 = 2   mid = 4 + (5-4)/2 = 4
+c4		c5		c7		c8	c11          c12
+arr, 0,0		arr, 1, 1		arr,2,2		arr,3,3	arr,4,4 	arr, 5,5
+(50)		(20)		(40)		(90)	(88)	(11)
+
+50	20	40	90	88	11	13
+0	1	2	3	4	5	6
+
+mergeSort(arr, i, j):
+	## base case condition
+	if i == j:
+		return arr[i]
+	else:
+		mid = i + (j-i) / 2
+		mergeSort(arr, i, mid)
+		mergeSort(arr, mid+1, j)
+		mergeProcedure(arr, i, mid, mid+1, j)
+
+Recurrence relation of above sorting algorithm:
+
+
