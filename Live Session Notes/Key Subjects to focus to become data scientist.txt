@@ -1,0 +1,9 @@
+Key Subjects to focus to become a data scientist:
+Matrix Theory	
+Gilbert Strang Lectures
+Probability and Random Variables
+Applied Statistics
+Data Structure and Algorithms
+Foundations of Machine Learning
+Natural Language Processing and/or Information Retrieval
+Deep Learning
