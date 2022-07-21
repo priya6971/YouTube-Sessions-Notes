@@ -1,0 +1,12 @@
+Why Data Structure are important and where it is useful in real time applications:
+way to structure the data -> retrieval, store, process, organize
+Array, Linked List, Tree, Stack, Queue, Graphs and many more
+List of records -> Insertion, Deletion and Searching
+Applications of data structure in real life:
+Searching is the most frequent operation -> array (binary search)
+Insertion and deletion are the most frequent operation -> linked list
+Undo : Ctrl+Z -> LIFO (Last In First Out) -> Stack
+Spotify: Linked List
+Uber, Ola: Graph
+E-commerce website: Tree
+Browser data history: FIFO -> Queue 
