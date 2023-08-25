@@ -1,0 +1,169 @@
+1. Recursive approach of Fibonacci Series
+
+class fibonacciSeries {
+    public static int fib(int n){
+        if(n <= 1){
+            return n;
+        }
+        return fib(n-1) + fib(n-2);
+    }
+
+    public static void main(String[] args) {
+        int n = 100;
+        System.out.println(fib(n));
+    }
+}
+
+2. Memoized approach of Fibonacci Series
+import java.util.*;
+
+class fibonacciSeries {
+
+    public static Map<Integer, Long> memo = new HashMap<>();
+
+    public static long fib(int n){
+        if(n <= 1){
+            return n;
+        }
+
+        if(memo.containsKey(n)){
+            return memo.get(n);
+        }
+
+        long fibVal = fib(n-1) + fib(n-2);
+        memo.put(n, fibVal);
+        return fibVal;
+    }
+
+
+    public static void main(String[] args) {
+        int n = 8000;
+        System.out.println(fib(n));
+    }
+}
+
+
+3. Tabulation approach of Fibonacci Series
+class fibonacciSeries {
+    public static int fib(int n){
+        int f[] = new int[n + 2];
+
+        f[0] = 0;
+        f[1] = 1;
+        for(int i=2; i<=n; i++){
+            f[i] = f[i-1] + f[i-2];
+        }
+
+        return f[n];
+    }
+    public static void main(String[] args) {
+        int n = 9;
+        System.out.println(fib(n));
+    }
+}
+
+4. Optimized for the space - O(1)
+   time complexity - O(n)
+
+class fibonacciSeries {
+    public static int fib(int n){
+        int a = 0, b = 1, c;
+        if(n == 0){
+            return a;
+        }
+        for(int i=2; i<=n; i++){
+            c = a + b;
+            a = b;
+            b = c;
+        }
+
+        return b;
+    }
+
+    public static void main(String[] args) {
+        int n = 10;
+        System.out.println(fib(n));
+    }
+}
+
+---------------------------------------------------------------
+Staircase Problem
+
+Recursive approach - O(2^n)
+class Solution {
+    public int climbStairs(int n) {
+        if(n == 1 || n == 2){
+            return n;
+        }
+        return climbStairs(n-1) + climbStairs(n-2);
+    }
+}
+
+
+// Memoization Dynamic Programming - O(n)
+// space complexity: stack space + hashtable - O(n)
+class Solution {
+    public static Map<Integer, Integer> memo = new HashMap<>();
+    public int climbStairs(int n) {
+        if(n == 1 || n == 2){
+            return n;
+        }
+
+        // avoid the re-computations of the function calls
+        if(memo.containsKey(n)){
+            return memo.get(n);
+        }
+
+        // recursive function call
+        int numWays = climbStairs(n - 1) + climbStairs(n - 2);
+        memo.put(n, numWays);
+        return numWays;
+    }
+}
+
+
+
+Tabulation approach
+
+// tabulation approach - no recursion
+// time complexity - O(n)
+// space complexity(array based ds) - O(n)
+
+class Solution {
+    public int climbStairs(int n) {
+        if(n == 1){
+            return 1;
+        }
+        // intialization
+        int[] cs = new int[n+1];
+        cs[1] = 1;
+        cs[2] = 2;
+        
+        for(int i=3; i<=n; i++){
+            cs[i] = cs[i-1] + cs[i-2];
+        }
+
+        return cs[n];
+    }
+}
+
+/ Most optimized approach
+// time complexity: O(n)
+// space complexity: O(1)
+
+class Solution {
+    public int climbStairs(int n) {
+        if(n == 1){
+            return 1;
+        }
+
+        int first = 1, second = 2, third;
+        for(int i=3; i<=n; i++){
+            third = first + second;
+            first = second;
+            second = third;
+        }
+
+        return second;
+    }
+}
